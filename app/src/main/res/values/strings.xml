@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NotesApp</string>
+    <string name="empty_notes_list">У вас еще нет ни одной заметки</string>
 </resources>
