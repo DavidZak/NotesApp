@@ -3,33 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="?android:actionBarSize"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_toolbar">
+    android:id="@+id/add_note_toolbar">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="?android:actionBarSize"
+            android:layout_height="?android:actionBarSize"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            app:srcCompat="@drawable/ic_back_indicator"
+            android:background="@android:color/transparent" />
+
         <TextView
             android:id="@+id/textViewTitleTextContacts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:text="@string/add_note_activity_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/ib_add"
-            android:layout_toStartOf="@+id/ib_add"/>
-
-        <ImageButton
-            android:id="@+id/ib_add"
-            android:layout_width="?android:actionBarSize"
-            android:layout_height="?android:actionBarSize"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            app:srcCompat="@drawable/ic_add_black_24dp"
-            android:background="@android:color/transparent" />
+            android:layout_toEndOf="@+id/ib_back"
+            android:layout_toRightOf="@+id/ib_back"
+            android:maxLines="1" />
 
     </RelativeLayout>
 

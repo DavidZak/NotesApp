@@ -18,13 +18,13 @@ public class NoteEntity {
     private String image;
     @TypeConverters(NotePriorityConverter.class)
     private NotePriority priority;
-    private String date;
+    private long date;
 
     public NoteEntity() {
 
     }
 
-    public NoteEntity(@NonNull String id, String title, String description, String image, NotePriority priority, String date) {
+    public NoteEntity(@NonNull String id, String title, String description, String image, NotePriority priority, long date) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -73,11 +73,11 @@ public class NoteEntity {
         this.priority = priority;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 

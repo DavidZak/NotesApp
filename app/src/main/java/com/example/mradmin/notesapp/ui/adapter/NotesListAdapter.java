@@ -31,6 +31,12 @@ public class NotesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         this.data = new ArrayList<>();
     }
 
+    public NotesListAdapter(Context context, NotesListAdapterListener listener, List<NoteEntity> data) {
+        this.context = context;
+        this.listener = listener;
+        this.data = data;
+    }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -92,7 +98,8 @@ public class NotesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         private ImageView ivImage;
         private TextView tvTitle;
         private TextView tvDescription;
-        private ImageView ivPriority;
+        private View viewPriority;
+
 
         public NoteViewHolder(View itemView) {
             super(itemView);
@@ -100,7 +107,7 @@ public class NotesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             this.ivImage = itemView.findViewById(R.id.iv_image);
             this.tvTitle = itemView.findViewById(R.id.tv_title);
             this.tvDescription = itemView.findViewById(R.id.tv_description);
-            this.ivPriority = itemView.findViewById(R.id.iv_priority);
+            this.viewPriority = itemView.findViewById(R.id.view_priority);
         }
 
         public void bind(final NoteEntity noteEntity) {
@@ -128,26 +135,26 @@ public class NotesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
 
         void setNotePriorityImage(NotePriority notePriority) {
-            ivPriority.setVisibility(View.VISIBLE);
+            viewPriority.setVisibility(View.VISIBLE);
             switch (notePriority) {
                 case NONE:{
-                    ivPriority.setVisibility(View.GONE);
+                    viewPriority.setVisibility(View.GONE);
                     break;
                 }
                 case LOW:{
-                    ivPriority.setColorFilter(ContextCompat.getColor(itemView.getContext(), R.color.colorNotePriorityLow), PorterDuff.Mode.SRC_IN);
+                    viewPriority.setBackgroundColor(ContextCompat.getColor(itemView.getContext(), R.color.colorNotePriorityLow));
                     break;
                 }
                 case MEDIUM:{
-                    ivPriority.setColorFilter(ContextCompat.getColor(itemView.getContext(), R.color.colorNotePriorityMedium), PorterDuff.Mode.SRC_IN);
+                    viewPriority.setBackgroundColor(ContextCompat.getColor(itemView.getContext(), R.color.colorNotePriorityMedium));
                     break;
                 }
                 case HIGH:{
-                    ivPriority.setColorFilter(ContextCompat.getColor(itemView.getContext(), R.color.colorNotePriorityHigh), PorterDuff.Mode.SRC_IN);
+                    viewPriority.setBackgroundColor(ContextCompat.getColor(itemView.getContext(), R.color.colorNotePriorityHigh));
                     break;
                 }
                 default:{
-                    ivPriority.setVisibility(View.GONE);
+                    viewPriority.setVisibility(View.GONE);
                     break;
                 }
             }

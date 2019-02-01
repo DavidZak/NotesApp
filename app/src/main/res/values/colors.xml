@@ -12,8 +12,10 @@
     <color name="colorDivider">#303643</color>
     <color name="colorWhite">#ffffff</color>
 
-    <color name="colorNotePriorityLow">#51F154</color>
-    <color name="colorNotePriorityMedium">#F1E151</color>
+    <color name="colorNotePriorityLow">#3ad957</color>
+    <color name="colorNotePriorityMedium">#f2ed55</color>
     <color name="colorNotePriorityHigh">#f15151</color>
+
+    <color name="section_header_background">#c81e272d</color>
 
 </resources>
