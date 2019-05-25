@@ -4,5 +4,16 @@
 
     <!-- add note -->
     <string name="add_note_activity_title">Создание заметки</string>
+    <string name="et_title_hint">Введите название…</string>
+    <string name="et_description_hint">Введите описание…</string>
+    <string name="et_location_hint">Выберите местоположение…</string>
+    <string name="et_date_hint">Выберите дату…</string>
+
+    <string-array name="spinner_priority">
+        <item>Выберите приоритет…</item>
+        <item>Низкий</item>
+        <item>Средний</item>
+        <item>Высокий</item>
+    </string-array>
 
 </resources>

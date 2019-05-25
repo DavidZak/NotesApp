@@ -28,7 +28,19 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/ib_back"
             android:layout_toRightOf="@+id/ib_back"
+            android:layout_toLeftOf="@+id/ib_save"
+            android:layout_toStartOf="@+id/ib_save"
             android:maxLines="1" />
+
+        <ImageButton
+            android:id="@+id/ib_save"
+            android:layout_width="?android:actionBarSize"
+            android:layout_height="?android:actionBarSize"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_save"
+            android:background="@android:color/transparent" />
 
     </RelativeLayout>
 

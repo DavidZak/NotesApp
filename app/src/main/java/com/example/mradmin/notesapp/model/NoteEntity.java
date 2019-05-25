@@ -18,19 +18,30 @@ public class NoteEntity {
     private String image;
     @TypeConverters(NotePriorityConverter.class)
     private NotePriority priority;
-    private long date;
+    private long createdDate;
+    private long dueDate;
 
     public NoteEntity() {
 
     }
 
-    public NoteEntity(@NonNull String id, String title, String description, String image, NotePriority priority, long date) {
+    public NoteEntity(@NonNull String id, String title, String description, String image, NotePriority priority, long createdDate) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.image = image;
         this.priority = priority;
-        this.date = date;
+        this.createdDate = createdDate;
+    }
+
+    public NoteEntity(@NonNull String id, String title, String description, String image, NotePriority priority, long createdDate, long dueDate) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.image = image;
+        this.priority = priority;
+        this.createdDate = createdDate;
+        this.dueDate = dueDate;
     }
 
     public String getId() {
@@ -73,12 +84,20 @@ public class NoteEntity {
         this.priority = priority;
     }
 
-    public long getDate() {
-        return date;
+    public long getCreatedDate() {
+        return createdDate;
     }
 
-    public void setDate(long date) {
-        this.date = date;
+    public void setCreatedDate(long date) {
+        this.createdDate = date;
+    }
+
+    public long getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(long dueDate) {
+        this.dueDate = dueDate;
     }
 
     @Override
@@ -88,7 +107,8 @@ public class NoteEntity {
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", priority=" + priority +
-                ", date='" + date +
+                ", createdDate='" + createdDate +
+                ", dueDate='" + dueDate +
                 '}';
     }
 }

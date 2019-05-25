@@ -111,7 +111,7 @@ public class MainActivity extends BaseActivity implements NotesListAdapterListen
                     return position == 0;
                 else
                     return position == 0
-                            ||  !(simpleDateFormat.format(new Date(notes.get(position).getDate())).equals(simpleDateFormat.format(new Date(notes.get(position - 1).getDate()))));
+                            ||  !(simpleDateFormat.format(new Date(notes.get(position).getCreatedDate())).equals(simpleDateFormat.format(new Date(notes.get(position - 1).getCreatedDate()))));
             }
 
             @Override
@@ -119,7 +119,7 @@ public class MainActivity extends BaseActivity implements NotesListAdapterListen
                 if (containsIndex(notes, position) == null)
                     return "";
                 else
-                    return simpleDateFormat.format(new Date(notes.get(position).getDate()));
+                    return simpleDateFormat.format(new Date(notes.get(position).getCreatedDate()));
             }
         };
     }
